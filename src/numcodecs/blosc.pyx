@@ -247,7 +247,8 @@ def compress(source, char* cname, int clevel, int shuffle=SHUFFLE,
         If None (default), `use_threads` decides how many threads are used:
 
         * True: the number set with `set_nthreads` (8, or the number of cores if
-          lower, until `set_nthreads` is called).
+          lower, until `set_nthreads` is called). In a process forked after numcodecs
+          was imported, one.
         * False: one.
         * None: the number set with `set_nthreads` in the main thread of the main
           process, and one in any other thread or process.
@@ -382,7 +383,8 @@ def decompress(source, dest=None, nthreads=None):
         If None (default), `use_threads` decides how many threads are used:
 
         * True: the number set with `set_nthreads` (8, or the number of cores if
-          lower, until `set_nthreads` is called).
+          lower, until `set_nthreads` is called). In a process forked after numcodecs
+          was imported, one.
         * False: one.
         * None: the number set with `set_nthreads` in the main thread of the main
           process, and one in any other thread or process.
